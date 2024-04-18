@@ -1,0 +1,155 @@
+import java.util.*;
+class SampleArrayDeLeon
+{
+   static Scanner scan = new Scanner(System.in);
+   public static void main(String[] args)
+   {
+   int a = 0, choice = 0;
+   int scores[] = new int[5];
+   do{
+      System.out.println("\n______MENU______");
+      System.out.println("1-POPULATE ARRAY ELEMENTS");
+      System.out.println("2-PRINTING ARRAY ELEMETS");                
+      System.out.println("3-GET THE SUM ARRAY ELEMTS");
+      System.out.println("4-GET THE AVERAGE OF ARRAY ELEMENTS");
+      System.out.println("5-GET THE SMALLEST ARRAY ELEMENT");
+      System.out.println("6-GET THE LARGEST ARRAY ELEMENT");
+      System.out.println("7-DISPLAY THE EVEN NUMBERS VALUES ELEMENTS");
+      System.out.println("8-DISPLAY THE ODD NUMBERS VALUES ELEMENTS");
+      System.out.println("9-EXIT");
+      choice = scan.nextInt();
+      switch(choice)
+      {
+         case 1:
+            System.out.println("1 - POPULATE ARRAY ELEMENTS");
+            polpulate(scores);
+            break;
+         case 2:
+            System.out.println("2 -PRINTING ARRAY ELEMETS");
+            print(scores);
+            break;
+         case 3:
+            System.out.println("3 - SUM ARRAY ELEMTS");
+            sum(scores);
+            break;
+         case 4:
+            System.out.println("4 -GET THE AVERAGE OF ARRAY ELEMENTS");
+            averages(scores);
+            break;
+          case 5:
+             System.out.println("5 - GET THE SMALLEST ARRAY ELEMENT");
+             smallest(scores);
+             break;
+          case 6:
+             System.out.println("6 - GET THE LARGEST ARRAY ELEMENT");
+             largest(scores);
+             break;
+          case 7:
+             System.out.println("7- DISPLAY THE EVEN NUMBERS VALUES ELEMENTS");
+             even(scores);
+             break;
+           case 8:
+             System.out.println("7 - DISPLAY THE ODD NUMBERS VALUES ELEMENTS");
+             odds(scores);
+             break; 
+         case 9:
+         System.exit(0);
+         break;
+         
+         default:
+             System.out.println("CHOICE OUT OF RANGE.");
+         
+      }
+   }while(choice!=9);
+   
+   }
+   
+   public static void  polpulate(int num[])
+   {
+      System.out.println("Enters 5 integers");
+      for(int x = 0;x < num.length; ++x){
+         num[x] = scan.nextInt();
+      }
+   }
+   
+   public static void  print(int num[])
+   {
+      
+      for(int y=0;y<num.length;y++){
+         System.out.print(" " +num[y]);
+      }
+   }
+    public static void sum(int num[]) {  
+          
+        
+        int sums = 0;    
+        for (int i = 0; i < num.length; i++) {  
+           sums += num[i];  
+        }  
+        System.out.println("Sum of all the elements of an array: " + sums);  
+    }
+  
+    
+    public static void averages(int num[]) {   
+        
+        int sum = 0;
+        for (int i = 0; i < num.length; i++) { 
+            sum = sum + num[i];
+        }
+        double average = sum / num.length;
+            System.out.println("Average value of the array elements is : " + average); 
+    }
+    
+    public static void smallest(int num[]) {  
+  
+         
+          
+        int min = num[0];  
+        
+        for (int i = 0; i < num.length; i++) {  
+            
+           if(num[i] <min)  
+               min = num[i];  
+        }  
+        System.out.println("Smallest element present in given array: " + min);  
+    } 
+     
+    public static void largest(int num[]) {  
+  
+       
+       
+        int max = num[0];  
+        
+        for (int i = 0; i < num.length; i++) {  
+             
+           if(num[i] > max)  
+               max = num[i];  
+        }  
+        System.out.println("Largest element present in given array: " + max);  
+    } 
+    
+     public static void even(int num[]){ 
+      
+      System.out.println("Even numbers in the given array are:: "); 
+ 
+      for (int i=0; i<num.length; i++){ 
+         if(num[i]%2 == 0){ 
+            System.out.println(num[i]); 
+         } 
+      }
+      }
+      public static void odds(int num[]){
+        
+        
+         
+         System.out.println("Odd Numbers:"); 
+          
+         for(int i=0;i<num.length;i++){ 
+          
+         if(num[i]%2!=0){  
+         
+         System.out.println(num[i]); 
+         } 
+         }  
+      }    
+}
